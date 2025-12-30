@@ -113,18 +113,36 @@ div#publications {
 /* Publication item card style */
 .pub-item {
 	background-color: #f8f9fa !important;
-	border-left: 5px solid #ff5722 !important;
-	padding: 20px !important;
+	padding: 20px 20px 20px 25px !important;
 	margin-bottom: 25px !important;
 	margin-left: 0 !important;
 	margin-right: 0 !important;
 	border-radius: 4px !important;
-	box-shadow: 0 1px 3px rgba(0,0,0,0.08) !important;
-	transition: box-shadow 0.3s ease !important;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+	position: relative !important;
+	overflow: hidden !important;
 }
 
 .pub-item:hover {
-	box-shadow: 0 3px 8px rgba(0,0,0,0.12) !important;
+	transform: translateY(-5px) !important;
+	box-shadow: 0 8px 20px rgba(0,0,0,0.18) !important;
+}
+
+/* Full-height orange bar on the left */
+.pub-item::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 5px;
+	background-color: #ff5722;
+	transition: width 0.3s ease;
+}
+
+.pub-item:hover::before {
+	width: 6px;
 }
 
 div#copyright p {
