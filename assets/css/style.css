@@ -158,31 +158,119 @@ div#people {
 	box-shadow: 0 2px 4px rgba(0,0,0,0.08);
 }
 
-.member-item {
-	background-color: #f8f9fa;
+/* Member card grid layout */
+.col-md-2-4 {
+	flex: 0 0 20%;
+	max-width: 20%;
+	padding: 0 15px;
+	margin-bottom: 30px;
+}
+
+@media (max-width: 1200px) {
+	.col-md-2-4 {
+		flex: 0 0 25%;
+		max-width: 25%;
+	}
+}
+
+@media (max-width: 992px) {
+	.col-md-2-4 {
+		flex: 0 0 33.333%;
+		max-width: 33.333%;
+	}
+}
+
+@media (max-width: 768px) {
+	.col-md-2-4 {
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+}
+
+@media (max-width: 576px) {
+	.col-md-2-4 {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}
+
+.member-card {
+	margin-bottom: 30px;
+}
+
+.member-card-inner {
+	background-color: #fff;
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
 	padding: 20px;
-	margin-bottom: 15px;
-	margin-left: 0 !important;
-	margin-right: 0 !important;
-	border-radius: 4px;
-	border-left: 4px solid #477cd1;
+	text-align: center;
 	transition: all 0.3s ease;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+	height: 100%;
 }
 
-.member-item:hover {
-	transform: translateY(-3px);
-	box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-	border-left-width: 5px;
+.member-card-inner:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+	border-color: #477cd1;
 }
 
-.member-item h6 {
-	color: #477cd1;
+.member-photo {
+	width: 150px;
+	height: 150px;
+	border-radius: 8px;
+	object-fit: cover;
+	margin: 0 auto 15px;
+	display: block;
+}
+
+.member-name {
+	color: #333;
 	font-weight: bold;
 	font-size: 16px;
+	margin-bottom: 8px;
 }
 
-.member-item p {
-	font-size: 14.5px;
+.member-title {
+	color: #dc143c;
+	font-weight: bold;
+	font-size: 14px;
+	margin-bottom: 8px;
+}
+
+.member-period {
+	color: #999;
+	font-size: 13px;
+	margin-bottom: 5px;
+}
+
+.member-co-supervised {
+	color: #999;
+	font-size: 12px;
+	font-style: italic;
+	margin-bottom: 10px;
+}
+
+.member-social {
+	margin-top: 10px;
+	font-size: 20px;
+}
+
+.member-social a {
+	color: #dc143c;
+	margin: 0 5px;
+	transition: color 0.3s ease;
+}
+
+.member-social a:hover {
+	color: #477cd1;
+}
+
+#members-container .row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -15px;
+	margin-right: -15px;
 }
 
 div#copyright p {
