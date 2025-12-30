@@ -1,0 +1,181 @@
+body {
+	background-color: #eee;
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #477cd1;
+}
+
+a {
+	color: #477cd1;
+	text-decoration: none;
+}
+
+a:hover img {
+	border-bottom: 1px dotted #527bbd;
+}
+
+h3 {
+	border-bottom: 1px solid #ccc;
+}
+
+img {
+	max-width: 102%;
+}
+
+ul.list-inline img {
+	height: 30px;
+}
+
+.hidden {
+	display: none;
+}
+
+p {
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+div.container {
+	background-color: #fff;
+}
+
+div#header {
+	background-color: #fff;
+	border-bottom: 2px solid #dedede;
+	height: 80px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 64;
+}
+
+div#header div#logo {
+	padding: 20px 0;
+}
+
+div#navigation {
+	text-align: right;
+}
+
+div#navigation li.list-inline-item {
+	border-top: 5px solid #fff;
+	padding: 16px 10px;
+}
+
+div#navigation li.list-inline-item:hover,
+div#navigation li.list-inline-item.active {
+	border-top: 5px solid #dc143c;
+}
+
+div#navigation li.list-inline-item:hover a,
+div#navigation li.list-inline-item.active a {
+	color: #dc143c;
+}
+
+div#content {
+	margin: 100px auto 10px;
+}
+
+div#content div.container {
+	padding: 90px 90px 20px 90px;
+}
+
+div.section {
+	margin: 40px 0;
+	position: relative;
+}
+
+p.title-position {
+	font-weight:bold;
+	font-size: 16px;
+	margin: 16px 0;
+}
+
+div#biography {
+	font-size: 14.5px;
+	vertical-align: middle;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+div#publications ul{
+	font-size: 14.5px;
+}
+
+div#publications {
+	font-size: 14.5px;
+}
+
+div#copyright p {
+	font-size: 14.5px;
+	text-align: center;
+	margin: 20px;
+}
+
+a#back-to-top {
+	background-color: rgba(19, 16, 34, 0.25);
+	border-radius: 50%;
+	color: #fff;
+	display: block;
+	font-size: 14px;
+	padding: 10px 0;
+	position: fixed;
+	width: 40px;
+	right: 40px;
+	bottom: 40px;
+	text-align: center;
+	z-index: 16;
+}
+
+a#back-to-top:hover {
+	background-color: rgba(19, 16, 34, 0.5);
+}
+
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {
+}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+	div#logo {
+		display: none;
+	}
+
+	div#header div.container {
+		padding: 0;
+	}
+
+	div#header div#navigation {
+		text-align: center;
+	}
+
+	div#content {
+		margin-top: 160px;
+	}
+
+	div#content div.container {
+		margin: 20px auto;
+		padding: 50px 25px;
+	}
+
+	div.section {
+		margin: 30px 0;
+		position: relative;
+	}
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+}
