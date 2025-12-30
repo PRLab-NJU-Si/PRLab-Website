@@ -111,18 +111,20 @@ div#publications {
 }
 
 /* Publication item card style */
-div#publications .row {
-	background-color: #f8f9fa;
-	border-left: 5px solid #ff5722;
-	padding: 20px;
-	margin-bottom: 25px;
-	border-radius: 4px;
-	box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-	transition: box-shadow 0.3s ease;
+.pub-item {
+	background-color: #f8f9fa !important;
+	border-left: 5px solid #ff5722 !important;
+	padding: 20px !important;
+	margin-bottom: 25px !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	border-radius: 4px !important;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.08) !important;
+	transition: box-shadow 0.3s ease !important;
 }
 
-div#publications .row:hover {
-	box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+.pub-item:hover {
+	box-shadow: 0 3px 8px rgba(0,0,0,0.12) !important;
 }
 
 div#copyright p {
