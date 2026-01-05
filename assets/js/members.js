@@ -1,51 +1,28 @@
 // Lab Members Data Loader
-// This script automatically loads member information from markdown files
-
-// List of member files (add new files here)
-const memberFiles = [
-    'people/student1.md',
-    'people/student2.md',
-    'people/student3.md'
-    // Add more member files here
-];
-
-// Parse YAML front matter from markdown
-function parseMarkdown(content) {
-    const match = content.match(/^---\s*\n([\s\S]*?)\n---/);
-    if (!match) return null;
-    
-    const yamlContent = match[1];
-    const data = {};
-    
-    yamlContent.split('\n').forEach(line => {
-        const colonIndex = line.indexOf(':');
-        if (colonIndex !== -1) {
-            const key = line.substring(0, colonIndex).trim();
-            const value = line.substring(colonIndex + 1).trim();
-            data[key] = value;
-        }
-    });
-    
-    return data;
-}
+// This script loads member information from members-data.js
 
 // Create member card HTML
 function createMemberCard(member) {
-    const photoPath = member.photo ? `./assets/img/people/${member.photo}` : './assets/img/people/default-avatar.jpg';
+    // member.photo is already a complete path in members-data.js
+    const photoPath = member.photo || './assets/img/people/default-avatar.jpg';
     
     // Social links HTML
     let socialLinks = '';
-    if (member.homepage) {
+    if (member.homepage && member.homepage.trim() !== '') {
         socialLinks += `<a href="${member.homepage}" target="_blank" title="Homepage"><i class="bi bi-house-fill"></i></a> `;
     }
-    if (member.google_scholar) {
+    if (member.google_scholar && member.google_scholar.trim() !== '') {
         socialLinks += `<a href="${member.google_scholar}" target="_blank" title="Google Scholar"><i class="bi bi-mortarboard-fill"></i></a> `;
     }
-    if (member.email) {
+    if (member.email && member.email.trim() !== '') {
         socialLinks += `<a href="mailto:${member.email}" title="Email"><i class="bi bi-envelope-fill"></i></a>`;
+    }
+    if (member.github && member.github.trim() !== '') {
+        socialLinks += `<a href="${member.github}" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>`;
     }
     
     const coSupervised = member.co_supervised ? `<p class="member-co-supervised">${member.co_supervised}</p>` : '';
+    const affiliation = member.affiliation ? `<p class="member-affiliation">${member.affiliation}</p>` : '';
     
     return `
         <div class="col-md-2-4 member-card">
@@ -55,6 +32,7 @@ function createMemberCard(member) {
                 <p class="member-title">${member.title}</p>
                 <p class="member-period">${member.period}</p>
                 ${coSupervised}
+                ${affiliation}
                 <div class="member-social">
                     ${socialLinks}
                 </div>
@@ -64,33 +42,44 @@ function createMemberCard(member) {
 }
 
 // Load and display members
-async function loadMembers() {
+function loadMembers() {
     const container = document.getElementById('members-container');
     if (!container) return;
     
     try {
-        const members = [];
-        
-        for (const file of memberFiles) {
-            try {
-                const response = await fetch(file);
-                const content = await response.text();
-                const data = parseMarkdown(content);
-                
-                if (data) {
-                    members.push(data);
-                }
-            } catch (error) {
-                console.warn(`Failed to load ${file}:`, error);
-            }
+        // Check if labMembers is available
+        if (typeof labMembers === 'undefined') {
+            console.error('labMembers data not found. Make sure members-data.js is loaded.');
+            container.innerHTML = '<p style="text-align: center; color: red;">Failed to load members data.</p>';
+            return;
         }
         
-        // Sort by order
-        members.sort((a, b) => (parseInt(a.order) || 999) - (parseInt(b.order) || 999));
+        // Collect all members from different categories
+        const allMembers = [];
+        
+        // Add PhD students
+        if (labMembers.phd_students) {
+            allMembers.push(...labMembers.phd_students);
+        }
+        
+        // Add Master students
+        if (labMembers.master_students) {
+            allMembers.push(...labMembers.master_students);
+        }
+        
+        // Add Research interns
+        if (labMembers.research_interns) {
+            allMembers.push(...labMembers.research_interns);
+        }
+        
+        // Add Visiting scholars
+        if (labMembers.visiting_scholars) {
+            allMembers.push(...labMembers.visiting_scholars);
+        }
         
         // Generate HTML
         let html = '<div class="row">';
-        members.forEach(member => {
+        allMembers.forEach(member => {
             html += createMemberCard(member);
         });
         html += '</div>';
@@ -98,6 +87,7 @@ async function loadMembers() {
         container.innerHTML = html;
     } catch (error) {
         console.error('Error loading members:', error);
+        container.innerHTML = '<p style="text-align: center; color: red;">Error loading members.</p>';
     }
 }
 
