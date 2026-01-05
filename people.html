@@ -16,6 +16,184 @@
     <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./assets/js/members-data.js"></script>
     <script type="text/javascript" src="./assets/js/members.js"></script>
+    <style>
+        /* Director Section Styling */
+        .director-section {
+            background: linear-gradient(135deg, #fef8f4 0%, #fff5ed 100%);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 5px 20px rgba(231, 126, 56, 0.15);
+            border: 2px solid #e77e38;
+            border-left: 5px solid #e77e38;
+        }
+        
+        .director-section img {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 4px solid #ffffff;
+            transition: all 0.3s ease;
+        }
+        
+        .director-section img:hover {
+            box-shadow: 0 12px 35px rgba(231, 126, 56, 0.3);
+        }
+        
+        .director-section h5 {
+            color: #e77e38 !important;
+            font-weight: 800;
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 2px rgba(231, 126, 56, 0.1);
+        }
+        
+        .director-section p {
+            line-height: 2;
+        }
+        
+        .director-section p strong {
+            color: #003366;
+        }
+        
+        /* Section Headers */
+        .section-header {
+            color: #003366;
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #e77e38;
+            position: relative;
+        }
+        
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(135deg, #e77e38 0%, #f4a261 100%);
+        }
+        
+        /* Members Container */
+        #members-container {
+            margin-top: 30px;
+        }
+        
+        /* Student Cards - Override dynamic styles */
+        .member-card {
+            margin-bottom: 30px;
+        }
+        
+        .member-card-inner {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #e77e38;
+            border-top: 1px solid rgba(231, 126, 56, 0.2);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .member-card-inner:hover {
+            box-shadow: 0 8px 30px rgba(231, 126, 56, 0.25);
+            border-left-color: #f4a261;
+        }
+        
+        .member-photo {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border: 3px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+        
+        .member-card-inner:hover .member-photo {
+            border-color: #e77e38;
+            box-shadow: 0 5px 15px rgba(231, 126, 56, 0.2);
+        }
+        
+        .member-name {
+            color: #003366;
+            font-weight: 700;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            margin-top: 10px;
+        }
+        
+        .member-title {
+            color: #e77e38;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+        
+        .member-period {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        
+        .member-co-supervised,
+        .member-affiliation {
+            color: #888;
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .member-social {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        .member-social a {
+            color: #e77e38;
+            font-size: 1.2rem;
+            margin-right: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .member-social a:hover {
+            color: #f4a261;
+            transform: scale(1.1);
+        }
+        
+        /* Former Members Link */
+        .former-members-link {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #e77e38 0%, #f4a261 100%);
+            color: white !important;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(231, 126, 56, 0.3);
+        }
+        
+        .former-members-link:hover {
+            background: linear-gradient(135deg, #d66d27 0%, #e39150 100%);
+            box-shadow: 0 8px 25px rgba(231, 126, 56, 0.4);
+            text-decoration: none;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .director-section {
+                padding: 25px;
+            }
+            
+            .director-section h5 {
+                font-size: 1.5rem;
+            }
+            
+            .section-header {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     
@@ -51,8 +229,7 @@
     <div id="content">
         <div class="container">
             <div id="people" class="section">
-                <h4>Director</h4>
-                <hr>
+                <h4 class="section-header">Director</h4>
 
                 <!-- Director Section -->
                 <div class="director-section">
@@ -61,34 +238,30 @@
                             <img src="./assets/img/photography.jpg" alt="Chenyang Si" class="rounded-circle" style="width: 100%;">
                         </div>
                         <div class="col-md-9">
-                            <h5 style="color: #477cd1; margin-bottom: 10px;">Chenyang Si</h5>
+                            <h5>Chenyang Si</h5>
                             <p style="font-weight: bold; margin-bottom: 15px;">
                                 Associate Professor<br>
                                 School of Intelligence Science and Technology<br>
                                 Nanjing University
                             </p>
-                            <p style="text-align: justify; line-height: 1.8;">
+                            <p style="text-align: justify;">
                                 <strong>Prof. Chenyang Si</strong> is a Tenure-Track Associate Professor at the School of Intelligence Science and Technology, Nanjing University. His research interests span visual understanding and generation, including fundamental architectures for computer vision, video understanding, generative models, video and image generation, as well as acceleration and optimization of generative models. Prior to this, he was a Research Fellow at Nanyang Technological University (NTU), Singapore, and worked as a Research Scientist at the Sea AI Lab of Sea Group.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <hr style="margin: 40px 0;">
-
                 <!-- Research Staff & Students Section -->
-                <h5 style="color: #477cd1; margin-bottom: 25px;">Students</h5>
+                <h5 class="section-header" style="margin-top: 60px;">Students</h5>
 
                 <!-- Members will be loaded dynamically from MD files -->
                 <div id="members-container">
                     <p style="text-align: center; color: #999;">Loading members...</p>
                 </div>
 
-                <hr style="margin: 40px 0;">
-
                 <!-- Former Members Section (Optional) -->
-                <div style="text-align: center; margin-top: 30px;">
-                    <a href="#" style="color: #477cd1; font-size: 16px;">Former Members</a>
+                <div style="text-align: center; margin-top: 60px; margin-bottom: 40px;">
+                    <a href="#" class="former-members-link">Former Members</a>
                 </div>
 
             </div> <!-- #people -->
