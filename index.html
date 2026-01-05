@@ -26,7 +26,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.8;
             color: #2c3e50;
-            background: #f8f9fa;
+            background: #fafafa;
         }
         
         /* Header/Navigation */
@@ -44,7 +44,7 @@
         #logo h5 {
             font-size: 1.4rem;
             font-weight: 700;
-            color: #1e3a8a;
+            color: #003366;
             margin: 0;
         }
         
@@ -67,7 +67,7 @@
         
         #navigation a:hover,
         #navigation .active a {
-            color: #1e3a8a;
+            color: #e77e38;
         }
         
         #navigation a::after {
@@ -77,7 +77,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #1e3a8a;
+            background: #e77e38;
             transition: width 0.3s ease;
         }
         
@@ -112,14 +112,14 @@
         .hero-text h2 {
             font-size: 3.5rem;
             font-weight: 800;
-            color: #0f172a;
+            color: #003366;
             margin-bottom: 15px;
             line-height: 1.2;
         }
         
         .title-position {
             font-size: 1.4rem;
-            color: #1e3a8a;
+            color: #e77e38;
             font-weight: 600;
             margin-bottom: 25px;
             line-height: 1.6;
@@ -139,14 +139,13 @@
             width: 280px;
             height: 280px;
             object-fit: cover;
-            box-shadow: 0 20px 60px rgba(30, 58, 138, 0.15);
+            box-shadow: 0 20px 60px rgba(231, 126, 56, 0.2);
             border: 6px solid white;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .hero-image img:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 70px rgba(30, 58, 138, 0.25);
+            box-shadow: 0 25px 70px rgba(231, 126, 56, 0.3);
         }
         
         .social-links {
@@ -184,10 +183,10 @@
         .section h4 {
             font-size: 2rem;
             font-weight: 700;
-            color: #0f172a;
+            color: #003366;
             margin-bottom: 30px;
             padding-bottom: 15px;
-            border-bottom: 3px solid #1e3a8a;
+            border-bottom: 3px solid #e77e38;
             position: relative;
         }
         
@@ -196,9 +195,9 @@
             position: absolute;
             bottom: -3px;
             left: 0;
-            width: 80px;
+            width: 100px;
             height: 3px;
-            background: #3b82f6;
+            background: linear-gradient(135deg, #e77e38 0%, #f4a261 100%);
         }
         
         .section hr {
@@ -213,7 +212,7 @@
         }
         
         .section a {
-            color: #1e3a8a;
+            color: #e77e38;
             text-decoration: none;
             border-bottom: 2px solid transparent;
             transition: border-color 0.3s ease;
@@ -221,15 +220,17 @@
         }
         
         .section a:hover {
-            border-bottom-color: #1e3a8a;
+            border-bottom-color: #e77e38;
         }
         
         /* Open Positions Section */
         #openings {
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            background: linear-gradient(135deg, #fef8f4 0%, #fff5ed 100%);
             border-radius: 16px;
             padding: 40px;
-            border-left: 5px solid #1e3a8a;
+            border-left: 5px solid #e77e38;
+            box-shadow: 0 5px 20px rgba(231, 126, 56, 0.15);
+            border: 2px solid #e77e38;
         }
         
         #openings ul {
@@ -249,21 +250,52 @@
             content: '▸';
             position: absolute;
             left: 0;
-            color: #1e3a8a;
+            color: #e77e38;
             font-weight: bold;
         }
         
         /* Academic Services */
-        #services .row {
-            margin-bottom: 30px;
+        #services .service-category {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #e77e38;
         }
         
         #services strong {
-            color: #0f172a;
-            font-size: 1.2rem;
+            color: #003366;
+            font-size: 1.3rem;
             font-weight: 700;
             display: block;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        
+        #services .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        
+        #services .service-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
+            color: #003366;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border: 1px solid #e0f2fe;
+            transition: all 0.3s ease;
+        }
+        
+        #services .service-tag:hover {
+            background: linear-gradient(135deg, #e77e38 0%, #f4a261 100%);
+            color: white;
+            border-color: #e77e38;
+            box-shadow: 0 3px 10px rgba(231, 126, 56, 0.3);
         }
         
         #services li {
@@ -279,7 +311,7 @@
             content: '•';
             position: absolute;
             left: 0;
-            color: #1e3a8a;
+            color: #e77e38;
             font-weight: bold;
         }
         
@@ -304,21 +336,20 @@
             bottom: 40px;
             width: 45px;
             height: 45px;
-            background: #1e3a8a;
+            background: linear-gradient(135deg, #e77e38 0%, #f4a261 100%);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(30, 58, 138, 0.3);
+            box-shadow: 0 5px 20px rgba(231, 126, 56, 0.3);
             z-index: 999;
         }
         
         #back-to-top:hover {
-            background: #1e40af;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+            background: linear-gradient(135deg, #d66d27 0%, #e39150 100%);
+            box-shadow: 0 8px 25px rgba(231, 126, 56, 0.4);
         }
         
         #back-to-top i {
@@ -492,44 +523,36 @@
             <div id="services" class="section">
                 <h4>Academic Services</h4>
                 <hr>
-                <div class="row">
-                    <div class="col-10">
-                        <p>
-                            <strong>Conference Area Chair</strong> <br>
-                            <li>BMVC 2024,2025</li>
-                            <li>CVPR 2026</li>
-                            <!-- <li>ICLR 2024</li> -->
-                        </p>
+                
+                <div class="service-category">
+                    <strong>Conference Area Chair</strong>
+                    <div class="tags-container">
+                        <span class="service-tag">BMVC 2024, 2025</span>
+                        <span class="service-tag">CVPR 2026</span>
                     </div>
-                </div> <!-- .row -->
-                <div class="row">
-                    <div class="col-10">
-                        <p>
-                            <strong>Conference Reviewer</strong> <br>
-                            <li>CVPR </li>
-                            <!-- <li>SIGGRAPH 2024</li> -->
-                            <li>ICCV </li>
-                            <li>NeurIPS</li>
-                            <li>ECCV</li>
-                            <li>AAAI</li>
-                            <!-- <li>WACV 2023</li> -->
-                        </p>
+                </div>
+                
+                <div class="service-category">
+                    <strong>Conference Reviewer</strong>
+                    <div class="tags-container">
+                        <span class="service-tag">CVPR</span>
+                        <span class="service-tag">ICCV</span>
+                        <span class="service-tag">NeurIPS</span>
+                        <span class="service-tag">ECCV</span>
+                        <span class="service-tag">AAAI</span>
                     </div>
-                </div> <!-- .row -->
-                <div class="row">
-                    <div class="col-10">
-                        <p>
-                            <strong>Journal Reviewer</strong> <br>
-                            <li>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</li>
-                            <li>IEEE Transactions on Image Processing (TIP)</li>
-                            <li>IEEE Transactions on Multimedia (TMM)</li>
-                            <li>IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)</li>
-                            <li>International Journal of Computer Vision (IJCV)</li>
-                            <!-- <li>ACM Transactions on Multimedia Computing, Communications, and Applications (TOMM)</li> -->
-                            <!-- <li>IET Computer Vision</li> -->
-                        </p>
-                    </div> <!-- .col-10 -->
-                </div> <!-- .row -->
+                </div>
+                
+                <div class="service-category">
+                    <strong>Journal Reviewer</strong>
+                    <div class="tags-container">
+                        <span class="service-tag">TPAMI</span>
+                        <span class="service-tag">TIP</span>
+                        <span class="service-tag">TMM</span>
+                        <span class="service-tag">TCSVT</span>
+                        <span class="service-tag">IJCV</span>
+                    </div>
+                </div>
             </div> <!-- #service -->
 
             <!-- Visitor Map -->
