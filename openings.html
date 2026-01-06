@@ -15,234 +15,241 @@
     <script type="text/javascript" src="./assets/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
     <style>
-        .hero-section {
-            background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
-            color: white;
-            padding: 60px 0;
-            margin-bottom: 40px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 31, 63, 0.5), inset 0 0 30px rgba(231, 126, 56, 0.1);
-            border: 2px solid rgba(231, 126, 56, 0.3);
-            position: relative;
+        /* Global Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            background: #fafafa;
         }
         
-        .hero-section::before {
-            content: '';
-            position: absolute;
+        /* Header/Navigation */
+        #header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 10px;
-            padding: 2px;
-            background: linear-gradient(135deg, #e77e38 0%, #f4a261 100%);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0.5;
-            pointer-events: none;
+            z-index: 1000;
+            padding: 16px 0;
         }
         
-        .hero-section h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            color: #e77e38;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(231, 126, 56, 0.3);
-        }
-        
-        .hero-section h2 i {
-            color: #e77e38;
-            filter: drop-shadow(0 0 8px rgba(231, 126, 56, 0.6));
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-        
-        @keyframes glow {
-            from {
-                filter: drop-shadow(0 0 8px rgba(231, 126, 56, 0.6));
-            }
-            to {
-                filter: drop-shadow(0 0 15px rgba(231, 126, 56, 0.9));
-            }
-        }
-        
-        .hero-section p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: #f0f0f0;
-        }
-        
-        .hero-section p strong {
-            color: #ffffff;
+        #logo h5 {
             font-weight: 700;
-        }
-        
-        .position-card {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border-left: 5px solid #e77e38;
-            border-top: 1px solid rgba(231, 126, 56, 0.2);
-        }
-        
-        .position-card:hover {
-            box-shadow: 0 8px 30px rgba(231, 126, 56, 0.25);
-            border-left-color: #f4a261;
-        }
-        
-        .position-card h4 {
             color: #003366;
-            font-weight: 700;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
         }
         
-        .position-card h4 i {
-            color: #e77e38;
-            margin-right: 12px;
-            font-size: 1.5rem;
-        }
-        
-        
-        .position-card ul {
-            padding-left: 20px;
-            line-height: 2;
-        }
-        
-        .position-card ul li {
-            margin-bottom: 10px;
-        }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, #fef8f4 0%, #fff5ed 100%);
-            border-radius: 12px;
-            padding: 30px;
-            margin: 40px 0;
-            border: 2px solid #e77e38;
-            box-shadow: 0 5px 20px rgba(231, 126, 56, 0.15);
-        }
-        
-        .highlight-box h4 {
-            color: #003366;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        
-        .highlight-box h4 i {
-            color: #e77e38;
-        }
-        
-        .research-area {
-            display: inline-block;
-            background: linear-gradient(135deg, #e77e38 0%, #f4a261 100%);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            margin: 5px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            box-shadow: 0 3px 10px rgba(231, 126, 56, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .research-area:hover {
-            box-shadow: 0 5px 15px rgba(231, 126, 56, 0.5);
-        }
-        
-        .contact-section {
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 40px;
-            text-align: center;
-            margin-top: 40px;
-        }
-        
-        .contact-section h4 {
-            color: #003366;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        
-        .contact-section h4 i {
-            color: #e77e38;
-        }
-        
-        .contact-section .btn-contact {
-            background: linear-gradient(135deg, #e77e38 0%, #f4a261 100%);
-            color: white;
-            padding: 12px 40px;
-            border-radius: 30px;
+        #navigation a {
+            color: #64748b;
             text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(231, 126, 56, 0.3);
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
         
-        .contact-section .btn-contact:hover {
-            background: linear-gradient(135deg, #d66d27 0%, #e39150 100%);
-            box-shadow: 0 8px 30px rgba(231, 126, 56, 0.5);
-        }
-        
-        .stats-section {
-            display: flex;
-            justify-content: space-around;
-            margin: 40px 0;
-            flex-wrap: wrap;
-        }
-        
-        .stat-item {
-            text-align: center;
-            padding: 20px;
-            min-width: 150px;
-        }
-        
-        .stat-item h3 {
+        #navigation a:hover {
             color: #e77e38;
+        }
+        
+        /* Main Container */
+        .main-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px 40px 80px;
+        }
+        
+        /* Page Title */
+        .page-title {
             font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-            text-shadow: 1px 1px 2px rgba(231, 126, 56, 0.2);
+            font-weight: 700;
+            color: #003366;
+            margin-bottom: 20px;
         }
         
-        .stat-item p {
-            color: #666;
-            font-size: 1rem;
+        /* Section */
+        .section {
+            margin-bottom: 3rem;
         }
         
-        .requirements-list {
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #003366;
+            margin-bottom: 1.5rem;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e77e38;
+        }
+        
+        /* Intro Text */
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #475569;
+            margin-bottom: 2rem;
+        }
+        
+        .intro-text a {
+            color: #e77e38;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        
+        .intro-text a:hover {
+            border-bottom-color: #e77e38;
+        }
+        
+        /* Requirements Card */
+        .requirements-card {
+            background: #f9fafb;
+            border-left: 4px solid #003366;
+            border-radius: 6px;
+            padding: 25px 30px;
+            margin-bottom: 2rem;
+        }
+        
+        .requirements-card h5 {
+            color: #003366;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .requirements-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .requirements-card li {
+            color: #475569;
+            font-size: 0.95rem;
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .requirements-card li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #e77e38;
+            font-weight: bold;
+        }
+        
+        /* Research Areas */
+        .research-areas-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        
+        .research-tag {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 12px 20px;
+            color: #003366;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        .research-tag:hover {
+            background: linear-gradient(135deg, #e77e38 0%, #f4a261 100%);
+            color: white;
+            border-color: #e77e38;
+            box-shadow: 0 3px 10px rgba(231, 126, 56, 0.2);
+        }
+        
+        .research-tag i {
+            margin-right: 6px;
+        }
+        
+        /* Contact Info */
+        .contact-info {
             background: white;
             border-radius: 8px;
-            padding: 20px;
-            margin-top: 20px;
+            padding: 25px;
+            margin-top: 2.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            text-align: center;
         }
         
-        .requirements-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid #e9ecef;
+        .contact-info p {
+            font-size: 1rem;
+            color: #475569;
+            margin-bottom: 15px;
         }
         
-        .requirements-list li:last-child {
-            border-bottom: none;
+        .contact-email {
+            color: #e77e38;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
         }
         
-        .icon-badge {
+        .contact-email:hover {
+            border-bottom-color: #e77e38;
+        }
+        
+        /* Footer */
+        #copyright {
+            background: #1e293b;
+            color: #94a3b8;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+        
+        /* Back to Top */
+        #back-to-top {
+            position: fixed;
+            right: -60px;
+            bottom: 40px;
+            width: 45px;
+            height: 45px;
             background: linear-gradient(135deg, #e77e38 0%, #f4a261 100%);
             color: white;
-            width: 40px;
-            height: 40px;
             border-radius: 50%;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
-            font-size: 1.2rem;
-            box-shadow: 0 3px 10px rgba(231, 126, 56, 0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(231, 126, 56, 0.3);
+            z-index: 999;
+        }
+        
+        #back-to-top:hover {
+            background: linear-gradient(135deg, #d66d27 0%, #e39150 100%);
+            box-shadow: 0 8px 25px rgba(231, 126, 56, 0.4);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 40px 25px 60px;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .research-areas-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .requirements-card {
+                padding: 20px 25px;
+            }
         }
     </style>
 </head>
@@ -278,257 +285,103 @@
     </div> <!-- #header -->
     
     <div id="content">
-        <div class="container">
+        <div class="main-container">
             
-            <!-- Hero Section -->
-            <div class="hero-section">
-                <div class="text-center">
-                    <h2><i class="bi bi-stars"></i> Join Our Research Group!</h2>
-                    <p style="font-size: 1.4rem; margin-bottom: 20px; color: #ffffff; font-weight: 700; letter-spacing: 1px;">
-                        <strong>PRLab @ Nanjing University</strong>
-                    </p>
-                    <p style="max-width: 800px; margin: 0 auto; color: #f0f0f0; font-size: 1.15rem;">
-                        We are actively seeking highly motivated students and researchers to join our team. 
-                        Our lab focuses on cutting-edge research in visual understanding and generation, 
-                        with a particular emphasis on video generation and diffusion models.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Stats Section -->
-            <div class="stats-section">
-                <div class="stat-item">
-                    <h3>20+</h3>
-                    <p>Top-tier Publications</p>
-                </div>
-                <div class="stat-item">
-                    <h3>10+</h3>
-                    <p>CVPR/NeurIPS Papers</p>
-                </div>
-                <div class="stat-item">
-                    <h3>5+</h3>
-                    <p>Oral Presentations</p>
-                </div>
-                <div class="stat-item">
-                    <h3>1000+</h3>
-                    <p>GitHub Stars</p>
-                </div>
-            </div>
-
-            <!-- Research Areas -->
-            <div class="highlight-box">
-                <h4><i class="bi bi-lightbulb"></i> Research Areas</h4>
-                <div style="text-align: center;">
-                    <span class="research-area"><i class="bi bi-film"></i> Video Generation</span>
-                    <span class="research-area"><i class="bi bi-image"></i> Diffusion Models</span>
-                    <span class="research-area"><i class="bi bi-eye"></i> Visual Understanding</span>
-                    <span class="research-area"><i class="bi bi-cpu"></i> Generative Models</span>
-                    <span class="research-area"><i class="bi bi-speedometer2"></i> Model Acceleration</span>
-                    <span class="research-area"><i class="bi bi-layers"></i> Vision Architectures</span>
-                </div>
-            </div>
-
-            <h4 style="color: #003366; margin-top: 50px; margin-bottom: 30px; font-weight: 700;">
-                <i class="bi bi-briefcase" style="color: #e77e38;"></i> Open Positions
-            </h4>
-
-            <div class="row">
-                <!-- PhD Students -->
-                <div class="col-md-6">
-                    <div class="position-card">
-                        <h4>
-                            <i class="bi bi-mortarboard-fill"></i>
-                            Ph.D. Students (2027 Fall)
-                        </h4>
-                        <p><strong>招收2027年秋季入学博士研究生（普博/直博）</strong></p>
-                        
-                        <p style="margin-top: 20px;"><strong>We are looking for:</strong></p>
-                        <ul>
-                            <li>Strong background in Computer Science, AI, or related fields</li>
-                            <li>Solid programming skills (Python, PyTorch/TensorFlow)</li>
-                            <li>Passion for computer vision and generative models</li>
-                            <li>Self-motivated with good research potential</li>
-                            <li>Good English communication skills</li>
-                        </ul>
-                        
-                        <p style="margin-top: 20px;"><strong>What we offer:</strong></p>
-                        <ul>
-                            <li>World-class research environment</li>
-                            <li>Opportunities to publish at top-tier conferences (CVPR, NeurIPS, ICCV, ECCV)</li>
-                            <li>Collaboration with leading researchers worldwide</li>
-                            <li>Access to high-performance computing resources</li>
-                            <li>Competitive stipend and benefits</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Master Students -->
-                <div class="col-md-6">
-                    <div class="position-card">
-                        <h4>
-                            <i class="bi bi-book"></i>
-                            Master's Students (2027 Fall)
-                        </h4>
-                        <p><strong>招收2027年秋季入学硕士研究生（保研/考研）</strong></p>
-                        
-                        <p style="margin-top: 20px;"><strong>Requirements:</strong></p>
-                        <ul>
-                            <li>Undergraduate degree in Computer Science or related fields</li>
-                            <li>Strong mathematical foundation</li>
-                            <li>Programming experience with deep learning frameworks</li>
-                            <li>Enthusiasm for AI research</li>
-                            <li>Ability to work in a collaborative environment</li>
-                        </ul>
-                        
-                        <p style="margin-top: 20px;"><strong>What you'll gain:</strong></p>
-                        <ul>
-                            <li>Hands-on experience with state-of-the-art AI research</li>
-                            <li>Mentorship from experienced researchers</li>
-                            <li>Publication opportunities at international conferences</li>
-                            <li>Career development support</li>
-                            <li>Vibrant research community</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Research Assistants -->
-                <div class="col-md-6">
-                    <div class="position-card">
-                        <h4>
-                            <i class="bi bi-person-workspace"></i>
-                            Research Assistants
-                        </h4>
-                        <p><strong>Full-time research positions available</strong></p>
-                        
-                        <p style="margin-top: 20px;"><strong>Ideal candidates:</strong></p>
-                        <ul>
-                            <li>Bachelor's or Master's degree in relevant fields</li>
-                            <li>Strong research interest in computer vision</li>
-                            <li>Experience with deep learning research</li>
-                            <li>Planning to pursue a Ph.D. in the future</li>
-                            <li>Available for at least 1 year commitment</li>
-                        </ul>
-                        
-                        <p style="margin-top: 20px;"><strong>Benefits:</strong></p>
-                        <ul>
-                            <li>Competitive salary</li>
-                            <li>Research publication opportunities</li>
-                            <li>Recommendation letters for Ph.D. applications</li>
-                            <li>Flexible working environment</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Research Interns & Visiting Students -->
-                <div class="col-md-6">
-                    <div class="position-card">
-                        <h4>
-                            <i class="bi bi-globe"></i>
-                            Research Interns & Visiting Students
-                        </h4>
-                        <p><strong>Short-term research opportunities (3-6 months)</strong></p>
-                        
-                        <p style="margin-top: 20px;"><strong>We welcome:</strong></p>
-                        <ul>
-                            <li>Undergraduate/graduate students from top universities</li>
-                            <li>Students with research experience in CV/ML</li>
-                            <li>International students interested in collaboration</li>
-                            <li>Summer/winter research interns</li>
-                            <li>Minimum commitment of 3 months</li>
-                        </ul>
-                        
-                        <p style="margin-top: 20px;"><strong>Experience:</strong></p>
-                        <ul>
-                            <li>Work on cutting-edge research projects</li>
-                            <li>Learn from top researchers in the field</li>
-                            <li>Networking opportunities</li>
-                            <li>Potential for long-term collaboration</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Why Join Us -->
-            <div class="highlight-box" style="margin-top: 50px;">
-                <h4><i class="bi bi-award"></i> Why Join Our Lab?</h4>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div style="text-align: center; padding: 20px;">
-                            <div class="icon-badge" style="width: 70px; height: 70px; font-size: 2rem; margin: 0 auto 15px;">
-                                <i class="bi bi-trophy"></i>
-                            </div>
-                            <h5 style="color: #003366; margin-bottom: 10px; font-weight: 700;">Top-tier Research</h5>
-                            <p>Published at CVPR, NeurIPS, ICCV, ECCV with multiple oral/spotlight papers</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div style="text-align: center; padding: 20px;">
-                            <div class="icon-badge" style="width: 70px; height: 70px; font-size: 2rem; margin: 0 auto 15px;">
-                                <i class="bi bi-people"></i>
-                            </div>
-                            <h5 style="color: #003366; margin-bottom: 10px; font-weight: 700;">Expert Mentorship</h5>
-                            <p>Work directly with Prof. Si and collaborate with researchers from NTU, Sea AI Lab</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div style="text-align: center; padding: 20px;">
-                            <div class="icon-badge" style="width: 70px; height: 70px; font-size: 2rem; margin: 0 auto 15px;">
-                                <i class="bi bi-rocket"></i>
-                            </div>
-                            <h5 style="color: #003366; margin-bottom: 10px; font-weight: 700;">Cutting-edge Topics</h5>
-                            <p>Focus on hot research areas: video diffusion, FreeU, VBench, and more</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- How to Apply -->
-            <h4 style="color: #003366; margin-top: 50px; margin-bottom: 30px; font-weight: 700;">
-                <i class="bi bi-envelope-paper" style="color: #e77e38;"></i> Prospective Students
-            </h4>
-            <div class="position-card">
-                <p style="font-size: 1.1rem; line-height: 2;">
-                    If you are interested in joining our group, please send your application materials to:
-                    <strong style="color: #e77e38; font-size: 1.15rem;">chenyang.si@nju.edu.cn</strong>
-                    <br>
-                    For more information, please refer to this <a href="https://zhuanlan.zhihu.com/p/29424201230" target="_blank" style="color: #e77e38; font-weight: 600; text-decoration: underline;">Zhihu post</a>.
+            <!-- Page Title -->
+            <h1 class="page-title">Open Positions</h1>
+            
+            <!-- Introduction -->
+            <div class="intro-text">
+                <p>
+                    We are actively seeking highly motivated students and researchers to join our team at PRLab, Nanjing University. 
+                    Our lab focuses on cutting-edge research in visual understanding and generation, with a particular emphasis on 
+                    video generation and diffusion models.
                 </p>
+                <p>
+                    If you are interested in joining our group, feel free to contact me at 
+                    <a href="mailto:chenyang.si@nju.edu.cn">chenyang.si@nju.edu.cn</a>.
+                    For more information, please refer to this <a href="https://zhuanlan.zhihu.com/p/29424201230" target="_blank">Zhihu post</a>.
+                </p>
+            </div>
+            
+            <!-- Section 1: Prospective Students -->
+            <div class="section">
+                <h2 class="section-title">Prospective Students</h2>
                 
-                <p style="margin-top: 20px;"><strong>Please include the following in your email:</strong></p>
-                <ul class="requirements-list">
-                    <li><i class="bi bi-check-circle-fill" style="color: #e77e38;"></i> <strong>Email Subject:</strong> Application for [Position] - [Your Name]</li>
-                    <li><i class="bi bi-check-circle-fill" style="color: #e77e38;"></i> <strong>CV/Resume:</strong> Including education background, research experience, and publications (if any)</li>
-                    <li><i class="bi bi-check-circle-fill" style="color: #e77e38;"></i> <strong>Transcripts:</strong> Undergraduate and graduate transcripts (if applicable)</li>
-                    <li><i class="bi bi-check-circle-fill" style="color: #e77e38;"></i> <strong>Research Statement:</strong> Brief description of your research interests and why you want to join our lab (1-2 pages)</li>
-                    <li><i class="bi bi-check-circle-fill" style="color: #e77e38;"></i> <strong>Representative Work:</strong> Papers, projects, or code repositories (if available)</li>
-                    <li><i class="bi bi-check-circle-fill" style="color: #e77e38;"></i> <strong>References:</strong> Contact information of 2-3 references (optional)</li>
-                </ul>
+                <div class="requirements-card">
+                    <h5>Ph.D. Students (2027 Fall) - 招收2027年秋季入学博士研究生（普博/直博）</h5>
+                    <ul>
+                        <li>Strong background in Computer Science, AI, or related fields</li>
+                        <li>Solid programming skills (Python, PyTorch/TensorFlow)</li>
+                        <li>Passion for computer vision and generative models</li>
+                        <li>Self-motivated with good research potential</li>
+                        <li>Good English communication skills</li>
+                    </ul>
+                </div>
+                
+                <div class="requirements-card">
+                    <h5>Master's Students (2027 Fall) - 招收2027年秋季入学硕士研究生（保研/考研）</h5>
+                    <ul>
+                        <li>Undergraduate degree in Computer Science or related fields</li>
+                        <li>Strong mathematical foundation</li>
+                        <li>Programming experience with deep learning frameworks</li>
+                        <li>Enthusiasm for AI research</li>
+                        <li>Ability to work in a collaborative environment</li>
+                    </ul>
+                </div>
+                
+                <div class="requirements-card">
+                    <h5>Research Assistants & Research Interns</h5>
+                    <ul>
+                        <li>Bachelor's or Master's degree in relevant fields</li>
+                        <li>Strong research interest in computer vision</li>
+                        <li>Experience with deep learning research</li>
+                        <li>Planning to pursue a Ph.D. in the future (for Research Assistants)</li>
+                        <li>Available for at least 3-6 months commitment</li>
+                    </ul>
+                </div>
             </div>
-
-            <!-- Contact Section -->
-            <div class="contact-section">
-                <h4><i class="bi bi-chat-dots"></i> Get in Touch</h4>
-                <p style="font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto;">
-                    We are always excited to hear from talented and motivated individuals. 
-                    Don't hesitate to reach out even if you have questions!
-                </p>
-                <a href="mailto:chenyang.si@nju.edu.cn" class="btn-contact">
-                    <i class="bi bi-envelope"></i> Contact Us
-                </a>
-                <p style="margin-top: 20px; color: #999;">
-                    <i class="bi bi-info-circle"></i> We typically respond within 3-5 business days
-                </p>
+            
+            <!-- Section 2: Research Areas -->
+            <div class="section">
+                <h2 class="section-title">Research Areas</h2>
+                <div class="research-areas-grid">
+                    <div class="research-tag">
+                        <i class="bi bi-film"></i> Video Generation
+                    </div>
+                    <div class="research-tag">
+                        <i class="bi bi-image"></i> Diffusion Models
+                    </div>
+                    <div class="research-tag">
+                        <i class="bi bi-eye"></i> Visual Understanding
+                    </div>
+                    <div class="research-tag">
+                        <i class="bi bi-cpu"></i> Generative Models
+                    </div>
+                    <div class="research-tag">
+                        <i class="bi bi-speedometer2"></i> Model Acceleration
+                    </div>
+                    <div class="research-tag">
+                        <i class="bi bi-layers"></i> Vision Architectures
+                    </div>
+                </div>
             </div>
-
-        </div> <!-- container -->
+            
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <p>For any inquiries, please contact:</p>
+                <a href="mailto:chenyang.si@nju.edu.cn" class="contact-email">chenyang.si@nju.edu.cn</a>
+            </div>
+            
+        </div> <!-- main-container -->
     </div> <!-- #content -->
     
     <div id="copyright">
         <p>Copyright&copy; <span id="year"></span> Chenyang Si</p>
     </div> <!-- #copyright -->
+    
     <a id="back-to-top" href="javascript:void(0)"><i class="bi bi-chevron-up"></i></a>
+    
     <script>
         $("#copyright #year").html((new Date()).getFullYear())
     </script>
@@ -537,6 +390,15 @@
             $('html, body').animate({scrollTop: 0}, 250)
         })
     </script>
+    <script>
+        window.addEventListener("scroll", function(e) {
+            let currentOffset = e.currentTarget.pageYOffset;
+            if (currentOffset > 400) {
+                $("#back-to-top").css("right", 40)
+            } else {
+                $("#back-to-top").css("right", -60)
+            }
+        })
+    </script>
 </body>
 </html>
-
