@@ -91,9 +91,6 @@
             margin-bottom: 25px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
             transition: all 0.3s ease;
-            display: flex;
-            gap: 25px;
-            align-items: flex-start;
         }
         
         .pub-item:hover {
@@ -101,14 +98,7 @@
         }
         
         .pub-item .col-md-3 {
-            flex-shrink: 0;
-            width: 180px;
-            padding: 0;
-        }
-        
-        .pub-item .col-md-9 {
-            flex: 1;
-            padding: 0;
+            padding-left: 0;
         }
         
         .pub-item img {
@@ -210,13 +200,7 @@
         /* Responsive */
         @media (max-width: 768px) {
             .pub-item {
-                flex-direction: column;
                 padding: 20px;
-                gap: 15px;
-            }
-            
-            .pub-item .col-md-3 {
-                width: 100%;
             }
             
             #publications h4 {
