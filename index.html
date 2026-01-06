@@ -51,19 +51,24 @@
         
         #navigation ul {
             margin: 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-wrap: wrap;
         }
         
         #navigation .list-inline-item {
-            margin: 0 12px;
+            margin: 0 10px;
         }
         
         #navigation a {
             color: #64748b;
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: color 0.3s ease;
             position: relative;
+            white-space: nowrap;
         }
         
         #navigation a:hover,
