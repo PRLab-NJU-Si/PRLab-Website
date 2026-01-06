@@ -25,16 +25,16 @@ function createMemberCard(member) {
     const affiliation = member.affiliation ? `<p class="member-affiliation">${member.affiliation}</p>` : '';
     
     return `
-        <div class="col-md-2-4 member-card">
+        <div class="member-card">
             <div class="member-card-inner">
                 <img src="${photoPath}" alt="${member.name}" class="member-photo">
-                <h6 class="member-name">${member.name}</h6>
-                <p class="member-title">${member.title}</p>
-                <p class="member-period">${member.period}</p>
-                ${coSupervised}
-                ${affiliation}
-                <div class="member-social">
-                    ${socialLinks}
+                <div class="member-info">
+                    <h6 class="member-name">${member.name}</h6>
+                    <p class="member-title">${member.title}</p>
+                    <p class="member-period">${member.period}</p>
+                    ${coSupervised}
+                    ${affiliation}
+                    ${socialLinks ? `<div class="member-social">${socialLinks}</div>` : ''}
                 </div>
             </div>
         </div>
