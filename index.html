@@ -269,40 +269,45 @@
         }
         
         /* Academic Services */
+        #services .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
         #services .service-category {
             background: white;
             border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 25px;
+            padding: 25px 20px;
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
             border-left: 4px solid #e77e38;
         }
         
         #services strong {
             color: #003366;
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             font-weight: 700;
             display: block;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         #services .tags-container {
             display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 15px;
+            flex-direction: column;
+            gap: 8px;
         }
         
         #services .service-tag {
-            display: inline-block;
+            display: block;
             background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
             color: #003366;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.95rem;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.9rem;
             font-weight: 500;
             border: 1px solid #e0f2fe;
             transition: all 0.3s ease;
+            text-align: center;
         }
         
         #services .service-tag:hover {
@@ -406,6 +411,11 @@
             #navigation a {
                 font-size: 0.9rem;
             }
+            
+            #services .services-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -502,12 +512,7 @@
                 <hr>
                 <p>
                     I am a Tenure-Track Associate Professor at the School of Intelligence Science and Technology, Nanjing University. Prior to this, I was a Research Fellow at Nanyang Technological University (NTU), Singapore, working with Prof. <a href="https://liuziwei7.github.io/">Ziwei Liu</a>. 
-                    Before that, I worked as a Research Scientist at the <a href="https://sail.sea.com/">Sea AI Lab</a> of Sea Group. 
-                </p>
-                
-                <p>
-                    I received my Ph.D. degree in 2021 from <a href="http://english.ia.cas.cn/">CASIA</a>, supervised by Prof. <a href="http://cripac.ia.ac.cn/en/EN/column/item80.shtml">Tieniu Tan</a>, co-supervised by Prof. <a href="http://cripac.ia.ac.cn/en/EN/column/item125.shtml">Liang Wang</a> and Prof. <a href="http://cripac.ia.ac.cn/en/EN/column/item118.shtml">Wei Wang</a>. 
-<!--                He was a visting student from Sep, 2019 to Sep, 2020 in <a href="http://www.lv-nus.org/">Learning and Vision Lab</a> at National University of Singapore, working with Prof. <a href="https://sites.google.com/site/jshfeng/home?authuser=0">Jiashi FENG</a>. -->
+                    Before that, I worked as a Research Scientist at the <a href="https://sail.sea.com/">Sea AI Lab</a> of Sea Group. I received my Ph.D. degree in 2021 from <a href="http://english.ia.cas.cn/">CASIA</a>, supervised by Prof. <a href="http://cripac.ia.ac.cn/en/EN/column/item80.shtml">Tieniu Tan</a>, co-supervised by Prof. <a href="http://cripac.ia.ac.cn/en/EN/column/item125.shtml">Liang Wang</a> and Prof. <a href="http://cripac.ia.ac.cn/en/EN/column/item118.shtml">Wei Wang</a>. 
                 </p>
                 
                 <p>
@@ -521,33 +526,35 @@
                 <h4>Academic Services</h4>
                 <hr>
                 
-                <div class="service-category">
-                    <strong>Conference Area Chair</strong>
-                    <div class="tags-container">
-                        <span class="service-tag">BMVC 2024, 2025</span>
-                        <span class="service-tag">CVPR 2026</span>
+                <div class="services-grid">
+                    <div class="service-category">
+                        <strong>Conference Area Chair</strong>
+                        <div class="tags-container">
+                            <span class="service-tag">BMVC 2024, 2025</span>
+                            <span class="service-tag">CVPR 2026</span>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="service-category">
-                    <strong>Conference Reviewer</strong>
-                    <div class="tags-container">
-                        <span class="service-tag">CVPR</span>
-                        <span class="service-tag">ICCV</span>
-                        <span class="service-tag">NeurIPS</span>
-                        <span class="service-tag">ECCV</span>
-                        <span class="service-tag">AAAI</span>
+                    
+                    <div class="service-category">
+                        <strong>Conference Reviewer</strong>
+                        <div class="tags-container">
+                            <span class="service-tag">CVPR</span>
+                            <span class="service-tag">ICCV</span>
+                            <span class="service-tag">NeurIPS</span>
+                            <span class="service-tag">ECCV</span>
+                            <span class="service-tag">AAAI</span>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="service-category">
-                    <strong>Journal Reviewer</strong>
-                    <div class="tags-container">
-                        <span class="service-tag">TPAMI</span>
-                        <span class="service-tag">TIP</span>
-                        <span class="service-tag">TMM</span>
-                        <span class="service-tag">TCSVT</span>
-                        <span class="service-tag">IJCV</span>
+                    
+                    <div class="service-category">
+                        <strong>Journal Reviewer</strong>
+                        <div class="tags-container">
+                            <span class="service-tag">TPAMI</span>
+                            <span class="service-tag">TIP</span>
+                            <span class="service-tag">TMM</span>
+                            <span class="service-tag">TCSVT</span>
+                            <span class="service-tag">IJCV</span>
+                        </div>
                     </div>
                 </div>
             </div> <!-- #service -->
