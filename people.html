@@ -29,7 +29,7 @@
             margin: 0 auto;
         }
         
-        /* Header/Navigation */
+        /* Header/Navigation - Unified Style */
         #header {
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
@@ -37,18 +37,29 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            padding: 16px 0;
+            padding: 18px 0;
         }
         
         #logo h5 {
+            font-size: 1.3rem;
             font-weight: 700;
             color: #003366;
+            margin: 0;
+        }
+        
+        #navigation ul {
+            margin: 0;
+        }
+        
+        #navigation .list-inline-item {
+            margin: 0 12px;
         }
         
         #navigation a {
             color: #64748b;
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.95rem;
             transition: color 0.3s ease;
         }
         
@@ -327,9 +338,6 @@
                         </li>
                         <li class="list-inline-item">
                             <a href="openings.html">Openings (Join us!)</a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="index.html#services">Others</a>
                         </li>
                     </ul>
                 </div> <!-- #navigation -->
