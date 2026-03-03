@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(git:*)",
+      "Bash(xargs wc:*)",
+      "WebFetch(domain:prlab-nju-si.github.io)",
+      "WebFetch(domain:www.zhanglinfeng.tech)",
+      "WebSearch",
+      "WebFetch(domain:group.iiis.tsinghua.edu.cn)",
+      "WebFetch(domain:xuyang-liu16.github.io)",
+      "Bash(curl:*)"
+    ]
+  }
+}

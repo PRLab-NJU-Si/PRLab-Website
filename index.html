@@ -59,7 +59,7 @@
         .navbar-inner {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 60px;
+            padding: 0 48px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -137,17 +137,21 @@
         }
 
         .section-wrap.alt-bg {
-            background: var(--color-bg-page);
+            background: #F5F0F1;
         }
 
         .section-wrap.white-bg {
             background: var(--color-bg-card);
         }
 
+        .section-wrap + .section-wrap {
+            border-top: 1px solid var(--color-border);
+        }
+
         .section-container {
             max-width: 1340px;
             margin: 0 auto;
-            padding: 0 60px;
+            padding: 0 48px;
         }
 
         .section-title {
@@ -174,14 +178,14 @@
 
         /* ===== HERO SECTION ===== */
         #home {
-            background: linear-gradient(135deg, #FBF0F1 0%, #FFFFFF 60%);
+            background: linear-gradient(135deg, #FBE8EA 0%, #FFFFFF 50%, #F8F4F5 100%);
             padding: 72px 0 64px;
         }
 
         .hero-inner {
             max-width: 1340px;
             margin: 0 auto;
-            padding: 0 60px;
+            padding: 0 48px;
             display: flex;
             align-items: center;
             gap: 80px;
@@ -340,6 +344,42 @@
 
         .bio-text a:hover { border-bottom-color: var(--color-accent); }
 
+        .research-interest-block {
+            margin: 28px 0 8px;
+        }
+
+        .ri-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 12px;
+        }
+
+        .ri-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .ri-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 6px 14px;
+            background: var(--color-bg-card);
+            border: 1.5px solid var(--color-accent);
+            border-radius: 8px;
+            color: var(--color-accent);
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .ri-tag:hover {
+            background: var(--color-accent);
+            color: white;
+        }
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -391,9 +431,12 @@
             background: var(--color-bg-card);
             border: 1.5px solid var(--color-border);
             border-radius: var(--radius-card);
-            padding: 28px 24px;
+            padding: 32px 28px;
             border-top: 3px solid var(--color-accent);
             transition: transform 0.25s ease, box-shadow 0.25s ease;
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
         }
 
         .research-card:hover {
@@ -429,6 +472,33 @@
             color: var(--color-text-body);
             line-height: 1.7;
             margin: 0;
+            flex: 1;
+        }
+
+        .research-works {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .research-work-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            background: var(--color-accent-light);
+            color: var(--color-accent);
+            border-radius: 6px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .research-work-tag:hover {
+            background: var(--color-accent);
+            color: white;
         }
 
         /* ===== NEWS SECTION ===== */
@@ -648,8 +718,8 @@
 
         .members-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 18px;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
         }
 
         .member-card {
@@ -658,6 +728,7 @@
             border-radius: var(--radius-card);
             overflow: hidden;
             transition: transform 0.25s ease, box-shadow 0.25s ease;
+            position: relative;
         }
 
         .member-card:hover {
@@ -719,6 +790,23 @@
         }
 
         .member-social a:hover { color: var(--color-accent); }
+
+        .member-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(156,0,17,0.05), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .member-card:hover::after {
+            opacity: 1;
+        }
 
         /* ===== PUBLICATIONS SECTION ===== */
         .pub-year-group {
@@ -983,7 +1071,7 @@
         .footer-inner {
             max-width: 1340px;
             margin: 0 auto;
-            padding: 0 60px;
+            padding: 0 48px;
         }
 
         .footer-grid {
@@ -1280,6 +1368,18 @@
             video understanding, generative models, video and image generation, as well as acceleration and optimization of generative models.
         </p>
 
+        <div class="research-interest-block">
+            <h3 class="ri-title">Research Interests</h3>
+            <div class="ri-tags">
+                <span class="ri-tag"><i class="bi bi-film"></i> Video Generation</span>
+                <span class="ri-tag"><i class="bi bi-stars"></i> Diffusion Models</span>
+                <span class="ri-tag"><i class="bi bi-eye"></i> Visual Understanding</span>
+                <span class="ri-tag"><i class="bi bi-speedometer2"></i> Efficient AI</span>
+                <span class="ri-tag"><i class="bi bi-image"></i> Image Editing & Morphing</span>
+                <span class="ri-tag"><i class="bi bi-bar-chart-line"></i> Evaluation Benchmarks</span>
+            </div>
+        </div>
+
         <div class="recruit-banner">
             <div class="recruit-icon"><i class="bi bi-megaphone-fill"></i></div>
             <div class="recruit-text">
@@ -1341,26 +1441,50 @@
                 <div class="research-icon"><i class="bi bi-film"></i></div>
                 <h5>Video Generation</h5>
                 <p>We study generative models for high-quality and controllable video synthesis, including diffusion-based video models, consistency models, and efficient video generation architectures.</p>
+                <div class="research-works">
+                    <a href="https://vchitect.github.io/RepVid-Webpage/" class="research-work-tag" target="_blank">RepVideo</a>
+                    <a href="https://vchitect.intern-ai.org.cn/" class="research-work-tag" target="_blank">Vchitect-2.0</a>
+                    <a href="https://vchitect.github.io/LaVie-project/" class="research-work-tag" target="_blank">LaVie</a>
+                </div>
             </div>
             <div class="research-card">
                 <div class="research-icon"><i class="bi bi-stars"></i></div>
                 <h5>Generative Models</h5>
                 <p>We explore diffusion models and AIGC for image and multimodal generation, covering image editing, morphing, controllable generation, and 3D-aware content creation.</p>
+                <div class="research-works">
+                    <a href="https://chenyangsi.top/FreeU/" class="research-work-tag" target="_blank">FreeU</a>
+                    <a href="https://tianxingwu.github.io/pages/FreeInit/" class="research-work-tag" target="_blank">FreeInit</a>
+                    <a href="https://igl-hkust.github.io/das/" class="research-work-tag" target="_blank">DaS</a>
+                    <a href="https://vchitect.github.io/VideoBooth-project/" class="research-work-tag" target="_blank">VideoBooth</a>
+                </div>
             </div>
             <div class="research-card">
                 <div class="research-icon"><i class="bi bi-eye"></i></div>
                 <h5>Visual Understanding</h5>
                 <p>We develop fundamental vision architectures (e.g., MetaFormer) and methods for action recognition, skeleton-based understanding, and vision-language navigation.</p>
+                <div class="research-works">
+                    <a href="https://github.com/sail-sg/metaformer" class="research-work-tag" target="_blank">MetaFormer</a>
+                    <a href="https://github.com/sail-sg/iFormer" class="research-work-tag" target="_blank">iFormer</a>
+                    <a href="https://github.com/WentaoChen0813/SemanticPrompt" class="research-work-tag" target="_blank">Semantic Prompt</a>
+                </div>
             </div>
             <div class="research-card">
                 <div class="research-icon"><i class="bi bi-speedometer2"></i></div>
                 <h5>Efficient AI</h5>
                 <p>We investigate training-free and training-based acceleration methods for large generative models, reducing inference cost while maintaining generation quality.</p>
+                <div class="research-works">
+                    <a href="https://vchitect.github.io/FasterCache/" class="research-work-tag" target="_blank">FasterCache</a>
+                    <a href="https://vchitect.github.io/DCM/" class="research-work-tag" target="_blank">DCM</a>
+                </div>
             </div>
             <div class="research-card">
                 <div class="research-icon"><i class="bi bi-bar-chart-line"></i></div>
                 <h5>Evaluation &amp; Benchmarks</h5>
                 <p>We design comprehensive evaluation benchmarks for video generative models (e.g., VBench) to enable systematic and fair assessment of generation quality.</p>
+                <div class="research-works">
+                    <a href="https://vchitect.github.io/VBench-project/" class="research-work-tag" target="_blank">VBench</a>
+                    <a href="https://vchitect.github.io/VBench-project/" class="research-work-tag" target="_blank">VBench++</a>
+                </div>
             </div>
         </div>
     </div>
